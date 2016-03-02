@@ -37,5 +37,6 @@
     <orderEntry type="library" name="commons-dbcp:commons-dbcp:1.4" level="project" />
     <orderEntry type="library" name="hsqldb" level="project" />
     <orderEntry type="library" name="jcoord-1.0" level="project" />
+    <orderEntry type="library" name="jsp-api-2.0" level="project" />
   </component>
 </module>
