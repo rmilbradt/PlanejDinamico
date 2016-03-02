@@ -4,6 +4,7 @@
 
 <hibernate-configuration>
     <session-factory>
-
+        <mapping class="br.ufsm.ceesp.model.Localizacao"/>
+        <mapping class="br.ufsm.ceesp.model.Servico" />
     </session-factory>
 </hibernate-configuration>
