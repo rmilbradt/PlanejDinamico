@@ -16,6 +16,7 @@
           <element id="library" level="project" name="hsqldb" />
           <element id="library" level="project" name="jcoord-1.0" />
           <element id="library" level="project" name="jsp-api-2.0" />
+          <element id="library" level="project" name="postgresql-9.0-801.jdbc3" />
         </element>
       </element>
     </root>

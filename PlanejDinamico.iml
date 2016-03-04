@@ -38,5 +38,6 @@
     <orderEntry type="library" name="hsqldb" level="project" />
     <orderEntry type="library" name="jcoord-1.0" level="project" />
     <orderEntry type="library" name="jsp-api-2.0" level="project" />
+    <orderEntry type="library" name="postgresql-9.0-801.jdbc3" level="project" />
   </component>
 </module>

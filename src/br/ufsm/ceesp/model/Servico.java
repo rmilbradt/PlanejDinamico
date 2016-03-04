@@ -12,9 +12,15 @@ public class Servico {
 
     private Long id;
     private Date dataRealizacao;
+    private Date dataPrazo;
     private Localizacao localizacao;
     private Integer tempoExecucao;
     private String descricaoServico;
+    private String grupo;
+    private String regulada;
+    private Long numOS;
+    private String tipoOS;
+
 
     @Id
     @GeneratedValue
@@ -25,6 +31,15 @@ public class Servico {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Column(name="TIPO_OS")
+    public String getTipoOS() {
+        return tipoOS;
+    }
+
+    public void setTipoOS(String tipoOS) {
+        this.tipoOS = tipoOS;
     }
 
     @Column(name="DATA_REALIZACAO")
@@ -61,5 +76,41 @@ public class Servico {
 
     public void setDescricaoServico(String descricaoServico) {
         this.descricaoServico = descricaoServico;
+    }
+
+    @Column(name="DATA_PRAZO")
+    public Date getDataPrazo() {
+        return dataPrazo;
+    }
+
+    public void setDataPrazo(Date dataPrazo) {
+        this.dataPrazo = dataPrazo;
+    }
+
+    @Column(name="GRUPO")
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+
+    @Column(name="REGULADA")
+    public String getRegulada() {
+        return regulada;
+    }
+
+    public void setRegulada(String regulada) {
+        this.regulada = regulada;
+    }
+
+    @Column(name="NUM_OS")
+    public Long getNumOS() {
+        return numOS;
+    }
+
+    public void setNumOS(Long numOS) {
+        this.numOS = numOS;
     }
 }
