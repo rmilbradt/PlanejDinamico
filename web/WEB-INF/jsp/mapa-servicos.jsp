@@ -19,6 +19,13 @@
     <title>Title</title>
 </head>
 <body>
+
+<form action="ServletController" method="post" enctype="multipart/form-data">
+    Selecione o arquivo CSV:
+    <input type="file" name="arquivoCSV" id="fileToUpload">
+    <input type="submit" value="Enviar Arquivo" name="opcao">
+</form>
+
 <c:forEach items="${servicos}" var="servico">
     ${servico.descricaoServico}
     <fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataRealizacao}"/>
