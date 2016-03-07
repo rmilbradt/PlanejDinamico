@@ -1,5 +1,8 @@
 package br.ufsm.ceesp.controller;
 
+import br.ufsm.ceesp.util.CargaArquivos;
+
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -18,8 +21,11 @@ public class ServletController extends javax.servlet.http.HttpServlet {
             String opcao = request.getParameter("opcao");
 
             if (opcao.equals("Enviar Arquivo")) {
-                String arquivo = (InputStream) request.getParameter("arquivoCSV");
 
+                String arquivo = request.getParameter("arquivoCSV");
+                InputStream in = new ByteArrayInputStream(arquivo.getBytes());
+
+                CargaArquivos.carregaArquivoChamadosComercial(in);
             }
         }
     }
