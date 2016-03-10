@@ -25,7 +25,6 @@ public class ServletController extends javax.servlet.http.HttpServlet {
             String opcao = request.getParameter("opcao");
 
             if (opcao.equals("Enviar Arquivo")) {
-
                 // Create a new file upload handler
                 ServletFileUpload upload = new ServletFileUpload();
 
@@ -34,47 +33,19 @@ public class ServletController extends javax.servlet.http.HttpServlet {
                 while (iter.hasNext()) {
                     FileItemStream item = iter.next();
                     String name = item.getFieldName();
-                    InputStream stream = item.openStream();
-                    if (item.isFormField()) {
-                        System.out.println("Form field " + name + " with value "
-                                + Streams.asString(stream) + " detected.");
-                    } else {
-                        System.out.println("File field " + name + " with file name "
-                                + item.getName() + " detected.");
-                        // Process the input stream
+                    InputStream in = item.openStream();
+
+                    if (name.equals("arquivoCSV")) {
+                        CargaArquivos.carregaArquivoChamadosComercial(in);
                     }
                 }
             }
         } catch (FileUploadException e) {
             e.printStackTrace();
         }
-
-        /*// Create a factory for disk-based file items
-        DiskFileItemFactory factory = new DiskFileItemFactory();
-
-        // Configure a repository (to ensure a secure temp location is used)
-        ServletContext servletContext = this.getServletConfig().getServletContext();
-        File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
-        factory.setRepository(repository);
-
-        // Create a new file upload handler
-        ServletFileUpload upload = new ServletFileUpload(factory);
-
-        // Parse the request
-        List<FileItem> items = upload.parseRequest(request);
-
-        // Process the uploaded items
-        Iterator<FileItem> iter = items.iterator();
-        while (iter.hasNext()) {
-            FileItem item = iter.next();
-
-            if (item.isFormField()) {
-                processFormField(item);
-            } else {
-                processUploadedFile(item);
-            }
-        }*/
-
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {

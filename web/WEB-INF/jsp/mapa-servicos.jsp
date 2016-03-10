@@ -26,9 +26,9 @@
     <input type="submit" value="Enviar Arquivo" name="opcao">
 </form>
 
-<c:forEach items="${servicos}" var="servico">
+<%--<c:forEach items="${servicos}" var="servico">
     ${servico.descricaoServico}
     <fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataRealizacao}"/>
-</c:forEach>
+</c:forEach>--%>
 </body>
 </html>
