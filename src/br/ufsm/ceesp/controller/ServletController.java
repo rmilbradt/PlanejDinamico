@@ -1,30 +1,32 @@
 package br.ufsm.ceesp.controller;
 
+import br.ufsm.ceesp.model.Servico;
 import br.ufsm.ceesp.util.CargaArquivos;
 import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.fileupload.util.Streams;
 
-import java.io.ByteArrayInputStream;
+import javax.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
+import java.util.Collection;
 
 /**
  * Created by Rieffel on 06/03/2016.
  */
+
 public class ServletController extends javax.servlet.http.HttpServlet {
 
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
 
-            String opcao = request.getParameter("opcao");
 
-            if (opcao.equals("Enviar Arquivo")) {
+        try {
+
+
+
                 // Create a new file upload handler
                 ServletFileUpload upload = new ServletFileUpload();
 
@@ -36,19 +38,27 @@ public class ServletController extends javax.servlet.http.HttpServlet {
                     InputStream in = item.openStream();
 
                     if (name.equals("arquivoCSV")) {
-                        CargaArquivos.carregaArquivoChamadosComercial(in);
+                        Collection<Servico> servicos = CargaArquivos.carregaArquivoChamadosComercial(in);
+                        request.setAttribute("servicos", servicos);
                     }
                 }
-            }
+
         } catch (FileUploadException e) {
             e.printStackTrace();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
+        String nextJSP = "/WEB-INF/jsp/mapa-servicos.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+        dispatcher.forward(request,response);
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        System.out.println("passou aqui!");
+        String nextJSP = "/WEB-INF/jsp/mapa-servicos.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+        dispatcher.forward(request,response);
 
     }
 }

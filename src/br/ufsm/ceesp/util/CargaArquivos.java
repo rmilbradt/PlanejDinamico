@@ -1,9 +1,13 @@
 package br.ufsm.ceesp.util;
 
+import br.ufsm.ceesp.model.Localizacao;
 import br.ufsm.ceesp.model.Servico;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,20 +21,40 @@ public class CargaArquivos {
     public static Collection<Servico> carregaArquivoChamadosComercial(InputStream in) {
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        NumberFormat nf = new DecimalFormat("#,##0.00");
         Collection<Servico> servicos = new ArrayList<>();
         LeitorCSV leitorCSV = new LeitorCSV(in, ';');
         try {
             String[] linha = leitorCSV.nextLine();
             linha = leitorCSV.nextLine();
             while (linha != null) {
-                Servico servico = new Servico();
+                try {
+                    Servico servico = new Servico();
 
-                servico.setNumOS(Long.getLong(linha[0]));
-                servico.setTipoOS(linha[1]);
-                Date dataGeracao;
-
-                linha = leitorCSV.nextLine();
-                servicos.add(servico);
+                    servico.setNumOS(Long.getLong(linha[0]));
+                    servico.setTipoOS(linha[1]);
+                    Date dataGeracao = null;
+                    try {
+                        dataGeracao = sdf1.parse(linha[2]);
+                    } catch (Exception e) {
+                        dataGeracao = sdf2.parse(linha[2]);
+                    }
+                    Date dataPrazo = null;
+                    try {
+                        dataPrazo = sdf1.parse(linha[3]);
+                    } catch (Exception e) {
+                        dataPrazo = sdf2.parse(linha[3]);
+                    }
+                    servico.setDataRealizacao(dataGeracao);
+                    servico.setDataPrazo(dataPrazo);
+                    servico.setLocalizacao(new Localizacao());
+                    servico.getLocalizacao().setLatitude(nf.parse(linha[4]).doubleValue());
+                    servico.getLocalizacao().setLongitude(nf.parse(linha[5]).doubleValue());
+                    linha = leitorCSV.nextLine();
+                    servicos.add(servico);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
