@@ -35,19 +35,34 @@
 <body>
 <div id="map"></div>
 <script>
-    var map;
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
+        var myLatLng = { - 29.6876491, -
+        53.8150466
+        <%--<c:forEach items="${servicos}" var="servico">
+    {${servico.localizacao.latitude},${servico.localizacao.longitude}}
+        </c:forEach>
+        <c:if test="${not servico.last}">, </c:if>--%>
+    };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
         });
     }
 </script>
-<%--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>--%>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
+<%--
 <c:forEach items="${servicos}" var="servico">
     ${servico.id}, ${servico.localizacao.latitude}, ${servico.localizacao.longitude}<br/>
 </c:forEach>
+--%>
 
 </body>
 </html>
