@@ -50,9 +50,17 @@ public class CargaArquivos {
                     servico.setLocalizacao(new Localizacao());
                     servico.getLocalizacao().setLatitude(nf.parse(linha[4]).doubleValue());
                     servico.getLocalizacao().setLongitude(nf.parse(linha[5]).doubleValue());
-                    servico.setTempoExecucao(Integer.parseInt(linha[6]));
+                    try {
+                        servico.setTempoExecucao(Integer.parseInt(linha[6]));
+                    } catch (Exception e) {
+                        servico.setTempoExecucao(null);
+                    }
                     servico.setGrupo(linha[7]);
-                    servico.setRegulada(linha[8]);
+                    try {
+                        servico.setRegulada(linha[8]);
+                    } catch (Exception e) {
+                        servico.setRegulada(null);
+                    }
 
                     linha = leitorCSV.nextLine();
                     servicos.add(servico);

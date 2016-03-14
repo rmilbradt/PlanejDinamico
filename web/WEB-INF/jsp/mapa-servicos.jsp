@@ -16,42 +16,35 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Mapa Serviços</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
+
 </head>
+
 <body>
+<div id="map"></div>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
-<form action="carrega-mapa" method="post" enctype="multipart/form-data">
-    Selecione o arquivo CSV:
-    <input type="file" name="arquivoCSV" id="fileToUpload">
-    <input type="submit" value="Enviar Arquivo" name="opcao">
-</form>
-
-<table>
-    <tr>
-        <td>Número OS</td>
-        <td>Tipo OS</td>
-        <td>Data Realização</td>
-        <td>Data Prazo</td>
-        <td>Latitude</td>
-        <td>Longitude</td>
-        <td>Tempo Padrão</td>
-        <td>Grupo</td>
-        <td>Regulada</td>
-    </tr>
-    <tr>
-        <c:forEach items="${servicos}" var="servico">
-            <td>${servico.numOS}</td>
-            <td>${servico.tipoOS}</td>
-            <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataRealizacao}"/></td>
-            <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataPrazo}"/></td>
-            <td>${servico.localizacao.latitude}</td>
-            <td>${servico.localizacao.longitude}</td>
-            <td>${servico.tempoExecucao}</td>
-            <td>${servico.grupo}</td>
-            <td>${servico.regulada}</td>
-        </c:forEach>
-    </tr>
-</table>
 
 </body>
 </html>

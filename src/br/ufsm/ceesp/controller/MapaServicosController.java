@@ -21,4 +21,10 @@ public class MapaServicosController {
         return "mapa-servicos";
     }
 
+    @RequestMapping("lista-servicos.html")
+    public String lista(Model model) {
+        model.addAttribute("servicos", servicoDAO.findServicosDia(null));
+        return "lista-servicos";
+    }
+
 }
