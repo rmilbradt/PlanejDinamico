@@ -43,8 +43,11 @@
         });
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<%--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>--%>
 
+<c:forEach items="${servicos}" var="servico">
+    ${servico.id}, ${servico.localizacao.latitude}, ${servico.localizacao.longitude}<br/>
+</c:forEach>
 
 </body>
 </html>

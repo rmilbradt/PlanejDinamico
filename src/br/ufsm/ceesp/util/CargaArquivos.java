@@ -2,6 +2,10 @@ package br.ufsm.ceesp.util;
 
 import br.ufsm.ceesp.model.Localizacao;
 import br.ufsm.ceesp.model.Servico;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,9 +20,14 @@ import java.util.Date;
 /**
  * Created by politecnico on 04/03/2016.
  */
+@Repository
 public class CargaArquivos {
 
-    public static Collection<Servico> carregaArquivoChamadosComercial(InputStream in) {
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    @Transactional
+    public Collection<Servico> carregaArquivoChamadosComercial(InputStream in) {
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         NumberFormat nf = new DecimalFormat("#,##0.00");
@@ -56,14 +65,12 @@ public class CargaArquivos {
                         servico.setTempoExecucao(null);
                     }
                     servico.setGrupo(linha[7]);
-                    try {
+                    if (linha.length > 8) {
                         servico.setRegulada(linha[8]);
-                    } catch (Exception e) {
-                        servico.setRegulada(null);
                     }
-
                     linha = leitorCSV.nextLine();
                     servicos.add(servico);
+                    sessionFactory.getCurrentSession().save(servico);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

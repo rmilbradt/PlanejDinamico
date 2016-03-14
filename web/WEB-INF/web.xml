@@ -15,10 +15,6 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet>
-        <servlet-name>ServletController</servlet-name>
-        <servlet-class>br.ufsm.ceesp.controller.ServletController</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.html</url-pattern>
@@ -26,10 +22,6 @@
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.json</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletController</servlet-name>
-        <url-pattern>/carrega-mapa</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

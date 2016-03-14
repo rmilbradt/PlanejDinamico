@@ -47,6 +47,14 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <property name="maxUploadSize" value="100000000"/>
+
+    </bean>
+
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
         <!--<property name="url" value="jdbc:hsqldb:file:C:\projetos\PlanejDinamico\db" />-->
         <!--<property name="driverClassName" value="org.hsqldb.jdbcDriver" />-->

@@ -1,10 +1,19 @@
 package br.ufsm.ceesp.controller;
 
 import br.ufsm.ceesp.beans.ServicoDAO;
+import br.ufsm.ceesp.model.Servico;
+import br.ufsm.ceesp.util.CargaArquivos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.util.Collection;
+import java.util.Date;
 
 /**
  * Created by politecnico on 02/03/2016.
@@ -15,9 +24,13 @@ public class MapaServicosController {
     @Autowired
     private ServicoDAO servicoDAO;
 
+    @Autowired
+    private CargaArquivos cargaArquivos;
+
+
     @RequestMapping("mapa-servicos.html")
-    public String visualiza(Model model) {
-        model.addAttribute("servicos", servicoDAO.findServicosDia(null));
+    public String visualiza(@DateTimeFormat(pattern = "dd/MM/yyyy") Date data, Model model) {
+        model.addAttribute("servicos", servicoDAO.findServicosDia(data));
         return "mapa-servicos";
     }
 
@@ -26,5 +39,20 @@ public class MapaServicosController {
         model.addAttribute("servicos", servicoDAO.findServicosDia(null));
         return "lista-servicos";
     }
+
+    @RequestMapping(value = "carrega-mapa.html", method = RequestMethod.GET)
+    public String formCarregarArquivo() throws IOException {
+        return "carrega-mapa";
+    }
+
+    @RequestMapping(value = "carrega-mapa.html", method = RequestMethod.POST)
+    public String carregarArquivo(MultipartFile arquivoCSV, Model model) throws IOException {
+        if (arquivoCSV != null) {
+            Collection<Servico> servicos = cargaArquivos.carregaArquivoChamadosComercial(arquivoCSV.getInputStream());
+            model.addAttribute("servicos", servicos);
+        }
+        return "carrega-mapa";
+    }
+
 
 }
