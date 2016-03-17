@@ -51,7 +51,7 @@
 <body>
 
 <div id="floating-panel">
-    <button id="drop" onclick="drop()">Drop Markers</button>
+    <button id="drop" onclick="drop()">Exibir Marcadores</button>
 </div>
 <div id="map"></div>
 
@@ -61,11 +61,11 @@
     // consecutively rather than all at once. This example shows how to use
     // window.setTimeout() to space your markers' animation.
 
-    var pontos = [
-        <c:forEach items="${servicos}" var="servico" varStatus="st">
+    /*var pontos = [
+        <%--<c:forEach items="${servicos}" var="servico" varStatus="st">
         {lat: ${servico.localizacao.latitude}, lng: ${servico.localizacao.longitude}}
         <c:if test="${not st.last}">, </c:if>
-        </c:forEach>
+        </c:forEach>--%>
     ];
 
     var map;
@@ -86,14 +86,14 @@
                 });
             }
         }
-    }
+    }*/
 
 
-    /*var pontos = [
-        <%--<c:forEach items="${servicos}" var="servico" varStatus="st">
+    var pontos = [
+        <c:forEach items="${servicos}" var="servico" varStatus="st">
         {lat: ${servico.localizacao.latitude}, lng: ${servico.localizacao.longitude}}
         <c:if test="${not st.last}">, </c:if>
-        </c:forEach>--%>
+        </c:forEach>
     ];
 
     var markers = [];
@@ -128,7 +128,7 @@
             markers[i].setMap();
         }
         markers = [];
-    }*/
+    }
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
