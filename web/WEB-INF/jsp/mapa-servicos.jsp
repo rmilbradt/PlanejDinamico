@@ -51,7 +51,13 @@
 <body>
 
 <div id="floating-panel">
-    <button id="drop" onclick="drop()">Exibir Marcadores</button>
+    <form action="mapa-servicos.html" method="get">
+        De <input type="date" name="data" value="${param.data}">
+        <%--Para <input type="date" name="dataFinal" value="${param.dataFinal}">--%>
+        <button type="submit">Filtrar</button>
+        <button id="drop" onclick="drop()">Exibir Marcadores</button>
+    </form>
+
 </div>
 <div id="map"></div>
 
@@ -91,7 +97,7 @@
 
     var pontos = [
         <c:forEach items="${servicos}" var="servico" varStatus="st">
-        {lat: ${servico.localizacao.latitude}, lng: ${servico.localizacao.longitude}}
+        {lat: ${servico.localizacao.longitude}, lng: ${servico.localizacao.latitude}}
         <c:if test="${not st.last}">, </c:if>
         </c:forEach>
     ];
@@ -101,8 +107,8 @@
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 5,
-            center: {lat: -51.16895, lng: -29.9408}
+            zoom: 15,
+            center: {lat: -29.9408, lng: -51.16895}
         });
     }
 
