@@ -48,52 +48,19 @@
 
 </head>
 
-<body>
+<body onload="drop();">
 
 <div id="floating-panel">
     <form action="mapa-servicos.html" method="get">
-        De <input type="date" name="data" value="${param.data}">
-        <%--Para <input type="date" name="dataFinal" value="${param.dataFinal}">--%>
+        <input type="date" name="data" value="${param.data}">
         <button type="submit">Filtrar</button>
-        <button id="drop" onclick="drop()">Exibir Marcadores</button>
+
     </form>
 
 </div>
 <div id="map"></div>
 
     <script>
-
-    // If you're adding a number of markers, you may want to drop them on the map
-    // consecutively rather than all at once. This example shows how to use
-    // window.setTimeout() to space your markers' animation.
-
-    /*var pontos = [
-        <%--<c:forEach items="${servicos}" var="servico" varStatus="st">
-        {lat: ${servico.localizacao.latitude}, lng: ${servico.localizacao.longitude}}
-        <c:if test="${not st.last}">, </c:if>
-        </c:forEach>--%>
-    ];
-
-    var map;
-
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 5,
-            center: {lat: -51.16895, lng: -29.9408}
-        });
-        setMarkers(map);
-        function setMarkers() {
-
-            for (var i = 0; i < pontos.length; i++) {
-                var p = pontos[i];
-                var marker = new google.maps.Marker({
-                    position: {lat: p[0], lng: p[1]},
-                    map: map
-                });
-            }
-        }
-    }*/
-
 
     var pontos = [
         <c:forEach items="${servicos}" var="servico" varStatus="st">
@@ -107,7 +74,7 @@
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
+            zoom: 10,
             center: {lat: -29.9408, lng: -51.16895}
         });
     }

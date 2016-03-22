@@ -29,8 +29,10 @@ public class MapaServicosController {
 
 
     @RequestMapping("mapa-servicos.html")
-    public String visualiza(@DateTimeFormat(pattern = "dd/MM/yyyy") Date data, Model model) {
-        model.addAttribute("servicos", servicoDAO.findServicosDia(data));
+    public String visualiza(@DateTimeFormat(pattern = "yyyy-MM-dd") Date data, Model model) {
+        if(data != null) {
+            model.addAttribute("servicos", servicoDAO.findServicosDia(data));
+        }
         return "mapa-servicos";
     }
 
