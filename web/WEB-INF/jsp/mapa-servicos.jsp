@@ -16,9 +16,13 @@
 
 <html>
 <head>
-    <title>Mapa Serviços</title>
-    <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../bootstrap/favicon.ico">
+    <title>Mapa Serviços</title>
     <style>
         html, body {
             height: 100%;
@@ -45,25 +49,81 @@
             margin-left: -52px;
         }
     </style>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
 
 </head>
 
 <body>
+<!-- Fixed navbar -->
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../navbar/">Default</a></li>
+                <li><a href="../navbar-static-top/">Static top</a></li>
+                <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
 
-<div id="floating-panel">
-    <form action="mapa-servicos.html" method="get">
-        <input type="date" name="data" value="${param.data}">
-        <button type="submit">Filtrar</button>
+<div class="container">
 
-    </form>
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>
+            <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
+        <div class="map">
+            <div id="floating-panel">
+                <form action="mapa-servicos.html" method="get">
+                    <input type="date" name="data" value="${param.data}">
+                    <button type="submit">Filtrar</button>
 
-</div>
-<div id="map"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- /container -->
 
 </body>
 
 <script>
-
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
@@ -107,5 +167,9 @@
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+<div id="map"></div>
 
 </html>
