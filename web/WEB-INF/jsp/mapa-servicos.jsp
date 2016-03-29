@@ -16,10 +16,15 @@
 
 <html>
 <head>
-    <title>Mapa Serviços</title>
-    <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../bootstrap/favicon.ico">
+    <title>Mapa Serviços</title>
     <style>
+        .col-md-12 {margin-top: 50px;}
         html, body {
             height: 100%;
             margin: 0;
@@ -31,7 +36,7 @@
         #floating-panel {
             position: absolute;
             top: 10px;
-            left: 25%;
+
             z-index: 5;
             background-color: #fff;
             padding: 5px;
@@ -44,26 +49,56 @@
         #floating-panel {
             margin-left: -52px;
         }
+
     </style>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
 
 </head>
 
 <body>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="padding: 0px;"><img src="imagens/aes-sul.jpg" alt="imagem" style="height:100%;"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="carrega-mapa.html">Carregar Mapa</a></li>
+                <li><a href="lista-servicos.html">Listar Serviços</a></li>
+                <li><a href="mapa-servicos.html">Exibir Mapa</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
 
-<div id="floating-panel">
-    <form action="mapa-servicos.html" method="get">
-        <input type="date" name="data" value="${param.data}">
-        <button type="submit">Filtrar</button>
+<div class="container">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="row">
+        <di class="col-md-12">
+            <div class="map">
+                <div id="floating-panel">
+                    <form action="mapa-servicos.html" method="get">
+                        <input type="date" name="data" value="${param.data}">
+                        <button type="submit">Filtrar</button>
+                    </form>
+                </div>
+            </div>
+        </di>
+    </div>
 
-    </form>
-
-</div>
-<div id="map"></div>
+</div> <!-- /container -->
 
 </body>
 
 <script>
-
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
@@ -107,5 +142,9 @@
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+<div id="map"></div>
 
 </html>
