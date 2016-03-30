@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="dec" uri="http://www.opensymphony.com/sitemesh/decorator" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%--
@@ -22,6 +22,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../bootstrap/favicon.ico">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
     <title>Mapa Serviços</title>
     <style>
         .col-md-12 {margin-top: 50px;}
@@ -51,14 +53,13 @@
         }
 
     </style>
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
+
 
 </head>
 
 <body>
 <!-- Fixed navbar -->
-<nav class="navbar navbar-fixed-top">
+<%--<nav class="navbar navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -77,7 +78,7 @@
             </ul>
         </div><!--/.nav-collapse -->
     </div>
-</nav>
+</nav>--%>
 
 <div class="container">
     <!-- Main component for a primary marketing message or call to action -->
@@ -141,10 +142,9 @@
         }
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-<div id="map"></div>
+<script src="../bootstrap/js/ie10-viewport-bug-workaround.js"></script>--%>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
 </html>
