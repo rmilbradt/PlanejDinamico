@@ -18,11 +18,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="../bootstrap/favicon.ico">
-  <title>Mapa Serviços</title>
+  <decorator:title default="Serviços" />
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
 
   <decorator:head />
+
 </head>
 <body>
 <!-- Fixed navbar -->

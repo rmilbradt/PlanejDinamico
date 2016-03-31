@@ -16,16 +16,16 @@
 
 <html>
 <head>
-    <meta charset="utf-8">
+    <%--<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../bootstrap/favicon.ico">
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>--%>
     <title>Mapa Serviços</title>
-    <style>
+    <style type="text/css">
         .col-md-12 {margin-top: 50px;}
         html, body {
             height: 100%;
