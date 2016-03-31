@@ -142,9 +142,10 @@
         }
     }
 </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../bootstrap/js/ie10-viewport-bug-workaround.js"></script>--%>
-<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
 </html>

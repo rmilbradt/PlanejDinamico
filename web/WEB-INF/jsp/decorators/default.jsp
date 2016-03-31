@@ -6,6 +6,7 @@
   Time: 11:05
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" trimDirectiveWhitespaces="true" %>
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -48,7 +49,7 @@
 
 <decorator:body />
 
-</body
+</body>
 
 <decorator:html />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
