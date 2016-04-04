@@ -53,8 +53,49 @@
         }
 
     </style>
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 12,
+                    center: {lat: -29.9158509, lng: -51.2495661}
+                });
+                setMarkers(map);
+            }
 
+            var pontos = [
+                <c:forEach items="${servicos}" var="servico" varStatus="st">
+                ['<b>OS: </b>${servico.numOS}</br>' +
+                '<b>Tipo OS: </b>${servico.tipoOS}</br>' +
+                '<b>Data Realização: </b>${servico.dataRealizacao}</br>' +
+                '<b>Data Prazo: </b>${servico.dataPrazo}</br>' +
+                '<b>Latitude: </b>${servico.localizacao.longitude}</br>' +
+                '<b>Longitude: </b>${servico.localizacao.latitude}</br>' +
+                '<b>Tempo Execução: </b>${servico.tempoExecucao}</br>' +
+                '<b>Grupo: </b>${servico.grupo}</br>' +
+                '<b>Regulada: </b>${servico.regulada}',
+                    ${servico.localizacao.longitude}, ${servico.localizacao.latitude}]
+                <c:if test="${not st.last}">, </c:if>
+                </c:forEach>
+            ];
 
+            function setMarkers(map) {
+                var infoWindow = new google.maps.InfoWindow();
+                for (var i = 0; i < pontos.length; i++) {
+                    var ponto = pontos[i];
+                    var marker = new google.maps.Marker({
+                        position: {lat: ponto[1], lng: ponto[2]},
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        info: ponto[0]
+                    });
+
+                    marker.addListener('click', function() {
+                        infoWindow.setContent(this.info);
+                        infoWindow.open(map, this);
+                    });
+                }
+            }
+        </script>
 </head>
 
 <body>
@@ -97,55 +138,9 @@
 
 </div> <!-- /container -->
 
+<%--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>--%>
+
 </body>
 
-<script>
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: {lat: -29.9158509, lng: -51.2495661}
-        });
-        setMarkers(map);
-    }
-
-    var pontos = [
-        <c:forEach items="${servicos}" var="servico" varStatus="st">
-        ['<b>OS: </b>${servico.numOS}</br>' +
-        '<b>Tipo OS: </b>${servico.tipoOS}</br>' +
-        '<b>Data Realização: </b>${servico.dataRealizacao}</br>' +
-        '<b>Data Prazo: </b>${servico.dataPrazo}</br>' +
-        '<b>Latitude: </b>${servico.localizacao.longitude}</br>' +
-        '<b>Longitude: </b>${servico.localizacao.latitude}</br>' +
-        '<b>Tempo Execução: </b>${servico.tempoExecucao}</br>' +
-        '<b>Grupo: </b>${servico.grupo}</br>' +
-        '<b>Regulada: </b>${servico.regulada}',
-            ${servico.localizacao.longitude}, ${servico.localizacao.latitude}]
-        <c:if test="${not st.last}">, </c:if>
-        </c:forEach>
-    ];
-
-    function setMarkers(map) {
-        var infoWindow = new google.maps.InfoWindow();
-        for (var i = 0; i < pontos.length; i++) {
-            var ponto = pontos[i];
-            var marker = new google.maps.Marker({
-                position: {lat: ponto[1], lng: ponto[2]},
-                map: map,
-                animation: google.maps.Animation.DROP,
-                info: ponto[0]
-            });
-
-            marker.addListener('click', function() {
-                infoWindow.setContent(this.info);
-                infoWindow.open(map, this);
-            });
-        }
-    }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../bootstrap/js/ie10-viewport-bug-workaround.js"></script>--%>
 
 </html>
