@@ -96,6 +96,7 @@
                 }
             }
         </script>
+
 </head>
 
 <body>
@@ -124,21 +125,24 @@
 <div class="container">
     <!-- Main component for a primary marketing message or call to action -->
     <div class="row">
-        <di class="col-md-12">
-            <div class="map">
-                <div id="floating-panel">
-                    <form action="mapa-servicos.html" method="get">
-                        <input type="date" name="data" value="${param.data}">
-                        <button type="submit">Filtrar</button>
-                    </form>
-                </div>
+        <div class="col-md-12">
+
+            <div id="floating-panel">
+                <form action="mapa-servicos.html" method="get">
+                    <input type="date" name="data" value="${param.data}">
+                    <button type="submit">Filtrar</button>
+                </form>
             </div>
-        </di>
+
+
+        </div>
     </div>
+
+
 
 </div> <!-- /container -->
 
-<%--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>--%>
+<div id="map"></div><script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
 </body>
 

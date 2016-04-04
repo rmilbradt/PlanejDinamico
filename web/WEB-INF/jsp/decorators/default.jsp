@@ -21,9 +21,10 @@
   <link rel="icon" href="../bootstrap/favicon.ico">
   <title><decorator:title default="Serviços" /></title>
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <%--<script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>--%>
   <decorator:head />
-
 </head>
 <body>
 <!-- Fixed navbar -->
@@ -51,11 +52,4 @@
 <decorator:body />
 
 </body>
-
-<%--<decorator: getProperty property="local_script" />--%>
-
-<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 </html>
