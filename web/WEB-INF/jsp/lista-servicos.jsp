@@ -9,42 +9,59 @@
 <html>
 <head>
     <title>Lista Serviços</title>
+
+    <style type="text/css">
+      .col-md-12 {margin-top: 100px;}
+    </style>
 </head>
 <body>
 
-<form action="carrega-mapa" method="post" enctype="multipart/form-data">
-  Selecione o arquivo CSV:
-  <input type="file" name="arquivoCSV" id="fileToUpload">
-  <input type="submit" value="Enviar Arquivo" name="opcao">
-</form>
+<div class="container">
+  <!-- Main component for a primary marketing message or call to action -->
+  <div class="row">
+    <div class="col-md-12">
+        <form action="lista-servicos.html" method="get">
+          <input type="date" name="data" value="${param.data}">
+          <button type="submit">Filtrar</button>
+        </form>
 
-<table border="1" style="">
-  <tr>
-    <td>Número OS</td>
-    <td>Tipo OS</td>
-    <td>Data Realização</td>
-    <td>Data Prazo</td>
-    <td>Latitude</td>
-    <td>Longitude</td>
-    <td>Tempo Padrão</td>
-    <td>Grupo</td>
-    <td>Regulada</td>
-  </tr>
-  <c:forEach items="${servicos}" var="servico">
-    <tr>
-      <td>${servico.numOS}</td>
-      <td>${servico.tipoOS}</td>
-      <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataRealizacao}"/></td>
-      <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataPrazo}"/></td>
-      <td>${servico.localizacao.latitude}</td>
-      <td>${servico.localizacao.longitude}</td>
-      <td>${servico.tempoExecucao}</td>
-      <td>${servico.grupo}</td>
-      <td>${servico.regulada}</td>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Número OS</th>
+            <th>Tipo OS</th>
+            <th>Data Realização</th>
+            <th>Data Prazo</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Tempo Padrão</th>
+            <th>Grupo</th>
+            <th>Regulada</th>
+          </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${servicos}" var="servico">
+          <tr>
+            <td>${servico.numOS}</td>
+            <td>${servico.tipoOS}</td>
+            <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataRealizacao}"/></td>
+            <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataPrazo}"/></td>
+            <td>${servico.localizacao.longitude}</td>
+            <td>${servico.localizacao.latitude}</td>
+            <td>${servico.tempoExecucao}</td>
+            <td>${servico.grupo}</td>
+            <td>${servico.regulada}</td>
+          </tr>
+        </c:forEach>
+        </tbody>
+      </table>
 
-    </tr>
-  </c:forEach>
-</table>
+    </div>
+  </div>
+
+</div>
+
+
 
 </body>
 </html>

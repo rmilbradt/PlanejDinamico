@@ -37,8 +37,10 @@ public class MapaServicosController {
     }
 
     @RequestMapping("lista-servicos.html")
-    public String lista(Model model) {
-        model.addAttribute("servicos", servicoDAO.findServicosDia(null));
+    public String lista(@DateTimeFormat(pattern = "yyyy-MM-dd") Date data, Model model) {
+        if(data != null) {
+            model.addAttribute("servicos", servicoDAO.findServicosDia(data));
+        }
         return "lista-servicos";
     }
 
