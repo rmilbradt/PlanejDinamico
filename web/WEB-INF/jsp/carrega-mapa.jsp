@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ include file="taglibs.jsp"%>
 <%--
   Created by IntelliJ IDEA.
   User: politecnico
@@ -23,13 +21,14 @@
         <div class="row">
             <div class="col-md-12">
                 <form class="form-inline" action="carrega-mapa.html" method="post" enctype="multipart/form-data" role="form">
+                    <h2>Listar Serviços</h2><br/>
                     <label for="fileToUpload">Selecione o arquivo CSV:</label>
                     <input class="form-control" type="file" name="arquivoCSV" id="fileToUpload">
                     <button type="submit" class="btn btn-primary">Enviar Arquivo</button>
                 </form>
 
                 <c:if test="${not empty servicos}" >
-                    ${fn:length(servicos)} serviços carregados com sucesso!
+                    <h4>${fn:length(servicos)} serviços carregados com sucesso!</h4>
                 </c:if>
             </div>
         </div>

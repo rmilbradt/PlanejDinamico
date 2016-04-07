@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ include file="taglibs.jsp"%>
 <%--
   Created by IntelliJ IDEA.
   User: politecnico
@@ -30,19 +28,19 @@
         #floating-panel {
             position: absolute;
             top: 10px;
-
             z-index: 5;
+            /*margin-left: -52px;
             background-color: #fff;
             padding: 5px;
             border: 1px solid #999;
             text-align: center;
-            font-family: 'Roboto','sans-serif';
             line-height: 30px;
-            padding-left: 10px;
+            padding-left: 10px;*/
         }
-        #floating-panel {
-            margin-left: -52px;
+        .col-xs-12, .col-sm-12, .col-lg-12 {
+            margin-top: 50px;
         }
+
 
     </style>
         <script>
@@ -58,8 +56,8 @@
                 <c:forEach items="${servicos}" var="servico" varStatus="st">
                 ['<b>OS: </b>${servico.numOS}</br>' +
                 '<b>Tipo OS: </b>${servico.tipoOS}</br>' +
-                '<b>Data Realização: </b>${servico.dataRealizacao}</br>' +
-                '<b>Data Prazo: </b>${servico.dataPrazo}</br>' +
+                '<b>Data Realização: </b><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataRealizacao}"/></br>' +
+                '<b>Data Prazo: </b><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${servico.dataPrazo}"/></br>' +
                 '<b>Latitude: </b>${servico.localizacao.longitude}</br>' +
                 '<b>Longitude: </b>${servico.localizacao.latitude}</br>' +
                 '<b>Tempo Execução: </b>${servico.tempoExecucao}</br>' +
@@ -96,16 +94,17 @@
 <div class="container">
     <!-- Main component for a primary marketing message or call to action -->
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12 col-sm-12 col-lg-12">
 
             <div id="floating-panel">
-                <form action="mapa-servicos.html" method="get">
-                    <input type="date" name="data" value="${param.data}">
-                    <button type="submit">Filtrar</button>
+                <form class="form-inline" role="form" action="mapa-servicos.html" method="get">
+                    <div class="form-group">
+                        <label><b>Filtre por data: </b></label>
+                        <input type="date" name="data" value="${param.data}" class="form-control" id="data" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Filtrar</button><br/><br/>
                 </form>
             </div>
-
-
         </div>
     </div>
 

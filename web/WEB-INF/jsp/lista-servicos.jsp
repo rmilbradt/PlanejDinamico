@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="taglibs.jsp"%>
 <%--
   Created by IntelliJ IDEA.
   User: 201420240
@@ -5,7 +7,7 @@
   Time: 09:33
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Lista Serviços</title>
@@ -19,13 +21,17 @@
 <div class="container">
   <!-- Main component for a primary marketing message or call to action -->
   <div class="row">
-    <div class="col-md-12">
-        <form action="lista-servicos.html" method="get">
-          <input type="date" name="data" value="${param.data}">
-          <button type="submit">Filtrar</button>
-        </form>
 
-      <table class="table table-striped table-bordered">
+    <div class="col-md-12">
+      <form class="form-inline" role="form" action="lista-servicos.html" method="get">
+        <h2>Listar Serviços</h2><br/>
+        <div class="form-group">
+          <input type="date" name="data" value="${param.data}" class="form-control" id="data" />
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button> <br/><br/><br/>
+      </form>
+
+      <table class="table table-striped table-bordered table-responsive">
         <thead>
           <tr>
             <th>Número OS</th>
