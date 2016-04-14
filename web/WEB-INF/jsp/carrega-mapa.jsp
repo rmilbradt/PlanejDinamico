@@ -10,7 +10,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Carrega Mapa</title>
+    <title>Upload de Serviços</title>
     <style type="text/css">
         .col-md-12 {margin-top: 100px;}
     </style>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <form class="form-inline" action="carrega-mapa.html" method="post" enctype="multipart/form-data" role="form">
-                    <h2>Listar Serviços</h2><br/>
+                    <h2>Upload de Serviços</h2><br/>
                     <label for="fileToUpload">Selecione o arquivo CSV:</label>
                     <input class="form-control" type="file" name="arquivoCSV" id="fileToUpload">
                     <button type="submit" class="btn btn-primary">Enviar Arquivo</button>

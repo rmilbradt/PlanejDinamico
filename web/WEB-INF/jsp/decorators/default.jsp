@@ -42,7 +42,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="carrega-mapa.html">Carregar Mapa</a></li>
+        <li><a href="carrega-mapa.html">Upload de Serviços</a></li>
         <li><a href="lista-servicos.html">Listar Serviços</a></li>
         <li><a href="mapa-servicos.html">Exibir Mapa</a></li>
       </ul>
