@@ -3,9 +3,7 @@
         <hora>12:15</hora>
         <numEquipes>2</numEquipes>
         <numOrdensEmergenciais>0</numOrdensEmergenciais>
-        <equacao>( 0,25 * 3,48 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -66,72 ) + ( 0,25 * 244,22 ) + ( 1,00 *
-            0,00 ) = 45,25
-        </equacao>
+        <equacao>( 0,25 * 3,48 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -66,72 ) + ( 0,25 * 244,22 ) + ( 1,00 * 0,00 ) = 45,2</equacao>
     </configuracoes>
     <equipes>
         <equipe>
