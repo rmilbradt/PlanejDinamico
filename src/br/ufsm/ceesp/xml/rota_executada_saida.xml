@@ -3,10 +3,10 @@
         <hora>12:15</hora>
         <numEquipes>2</numEquipes>
         <numOrdensEmergenciais>0</numOrdensEmergenciais>
-        <equacao>( 0,25 * 10,46 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -87,45 ) + ( 0,25 * 185,79 ) + ( 1,00 * 0,00 ) = 27,20</equacao>
+        <equacao>( 0,25 * 10,46 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -87,45 ) + ( 0,25 * 185,79 ) + ( 1,00 *0,00 ) = 27,20</equacao>
     </configuracoes>
     <equipes>
-        <equipe1>
+        <equipe>
             <informacoes>
                 <numero>233</numero>
                 <latitude>29773800000</latitude>
@@ -26,42 +26,152 @@
                     <prioridade>1</prioridade>
                     <tempoAcumulado>17</tempoAcumulado>
                 </ordemComercial>
+                <ordemComercial>
+                    <sequencia>2</sequencia>
+                    <tipo>C</tipo>
+                    <numero>C20569605</numero>
+                    <latitude>29885223690</latitude>
+                    <longitude>51132156720</longitude>
+                    <horaChegada>13:29</horaChegada>
+                    <horaPartida>14:24</horaPartida>
+                    <prioridade>1</prioridade>
+                    <tempoAcumulado>74</tempoAcumulado>
+                </ordemComercial>
+                <ordemComercial>
+                    <sequencia>3</sequencia>
+                    <tipo>C</tipo>
+                    <numero>C20564756</numero>
+                    <latitude>29884405300</latitude>
+                    <longitude>51134684100</longitude>
+                    <horaChegada>14:24</horaChegada>
+                    <horaPartida>15:19</horaPartida>
+                    <prioridade>1</prioridade>
+                    <tempoAcumulado>129</tempoAcumulado>
+                </ordemComercial>
+                <ordemComercial>
+                    <sequencia>4</sequencia>
+                    <tipo>C</tipo>
+                    <numero>C20568654</numero>
+                    <latitude>29884210000</latitude>
+                    <longitude>51134710000</longitude>
+                    <horaChegada>15:19</horaChegada>
+                    <horaPartida>16:14</horaPartida>
+                    <prioridade>1</prioridade>
+                    <tempoAcumulado>184</tempoAcumulado>
+                </ordemComercial>
+                <ordemComercial>
+                    <sequencia>5</sequencia>
+                    <tipo>C</tipo>
+                    <numero>C20566874</numero>
+                    <latitude>29885141460</latitude>
+                    <longitude>51136051350</longitude>
+                    <horaChegada>16:14</horaChegada>
+                    <horaPartida>17:09</horaPartida>
+                    <prioridade>1</prioridade>
+                    <tempoAcumulado>239</tempoAcumulado>
+                </ordemComercial>
             </ordens>
-        </equipe1>
-        <equipe2>
+        </equipe>
+        <equipe>
             <informacoes>
                 <numero>244</numero>
                 <latitude>29912880000</latitude>
                 <longitude>51143490000</longitude>
                 <numOrdens>7</numOrdens>
-                <!--<tempoAcumulado>333</tempoAcumulado>-->
+                <tempoAcumulado>333</tempoAcumulado>
             </informacoes>
-            <ordemEmergencial>
-                <sequencia>1</sequencia>
-                <tipo>E</tipo>
-                <numero>F9870114</numero>
-                <latitude>29954305234</latitude>
-                <longitude>51161028911</longitude>
-                <horaChagada>13:06</horaChagada>
-                <horaPartida>13:36</horaPartida>
-                <prioridade>1</prioridade>
-                <tempo>52</tempo>
-                <custo>51,75	0,00</custo>
-                <distanciaEquipe></distanciaEquipe>
-                <distanciaOrdemAnterior></distanciaOrdemAnterior>
-            </ordemEmergencial>
-        </equipe2>
+            <ordens>
+                <ordemEmergencial>
+                    <sequencia>1</sequencia>
+                    <tipo>E</tipo>
+                    <numero>F9870114</numero>
+                    <latitude>29954305234</latitude>
+                    <longitude>51161028911</longitude>
+                    <horaChegada>13:06</horaChegada>
+                    <horaPartida>13:36</horaPartida>
+                    <custo>1</custo>
+                    <tempo>52</tempo>
+                    <distanciaEquipe>51,75</distanciaEquipe>
+                    <distanciaOrdemAnterior>0,00</distanciaOrdemAnterior>
+                </ordemEmergencial>
+                <ordemComercial>
+                    <sequencia>2</sequencia>
+                    <tipo>C</tipo>
+                    <numero>C20571363</numero>
+                    <latitude>29956190000</latitude>
+                    <longitude>51182390000</longitude>
+                    <horaChegada>13:39</horaChegada>
+                    <horaPartida>14:34</horaPartida>
+                    <prioridade>1</prioridade>
+                    <tempoAcumulado>84</tempoAcumulado>
+                </ordemComercial>
+                <ordemComercial>
+                    <sequencia>3</sequencia>
+                    <tipo>C</tipo>
+                    <numero>C20570845</numero>
+                    <latitude>29960490000</latitude>
+                    <longitude>51181620000</longitude>
+                    <horaChegada>14:35</horaChegada>
+                    <horaPartida>15:30</horaPartida>
+                    <prioridade>1</prioridade>
+                    <tempoAcumulado>140</tempoAcumulado>
+                </ordemComercial>
+                <ordemComercial>
+                    <sequencia>4</sequencia>
+                    <tipo>C</tipo>
+                    <numero>C20570094</numero>
+                    <latitude>29963600000</latitude>
+                    <longitude>51184270000</longitude>
+                    <horaChegada>15:31</horaChegada>
+                    <horaPartida>16:01</horaPartida>
+                    <prioridade>2</prioridade>
+                    <tempoAcumulado>196</tempoAcumulado>
+                </ordemComercial>
+                <ordemComercial>
+                    <sequencia>5</sequencia>
+                    <tipo>C</tipo>
+                    <numero>C20569204</numero>
+                    <latitude>29965750000</latitude>
+                    <longitude>51186190000</longitude>
+                    <horaChegada>16:01</horaChegada>
+                    <horaPartida>16:31</horaPartida>
+                    <prioridade>2</prioridade>
+                    <tempoAcumulado>226</tempoAcumulado>
+                </ordemComercial>
+                <ordemEmergencial>
+                    <sequencia>6</sequencia>
+                    <tipo>E</tipo>
+                    <numero>F9870685</numero>
+                    <latitude>29881582756</latitude>
+                    <longitude>51256003245</longitude>
+                    <horaChegada>16:48</horaChegada>
+                    <horaPartida>17:18</horaPartida>
+                    <custo>1</custo>
+                    <tempo>273</tempo>
+                    <distanciaEquipe>62,52</distanciaEquipe>
+                    <distanciaOrdemAnterior>16,40</distanciaOrdemAnterior>
+                </ordemEmergencial>
+                <ordemEmergencial>
+                    <sequencia>7</sequencia>
+                    <tipo>E</tipo>
+                    <numero>F9870758</numero>
+                    <latitude>29881582766</latitude>
+                    <longitude>51256003265</longitude>
+                    <horaChegada>17:18</horaChegada>
+                    <horaPartida>17:48</horaPartida>
+                    <custo>1</custo>
+                    <tempo>303</tempo>
+                    <distanciaEquipe>62,52</distanciaEquipe>
+                    <distanciaOrdemAnterior>0,00</distanciaOrdemAnterior>
+                </ordemEmergencial>
+            </ordens>
+        </equipe>
         <ordemEmergencialNao-atribuida>
-            <n-1></n-1>
             <tipo></tipo>
             <numero></numero>
             <latitude></latitude>
             <longitude></longitude>
-            <n-1></n-1>
-            <n-1></n-1>
             <custo></custo>
-            <n-1></n-1>
-            <n-1></n-1>
         </ordemEmergencialNao-atribuida>
     </equipes>
 </rota_saida>
