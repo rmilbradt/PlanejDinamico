@@ -58,5 +58,13 @@ public class MapaServicosController {
         return "carrega-mapa";
     }
 
+    @RequestMapping(value = "cadastra-servico.html")
+    public String cadastraServico(Servico servico) {
+        if (servico != null) {
+            servicoDAO.criaServico(servico);
+        }
+        return "formulario-servico";
+    }
+
 
 }

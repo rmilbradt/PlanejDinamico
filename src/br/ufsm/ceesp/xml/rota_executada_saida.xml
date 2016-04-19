@@ -6,16 +6,16 @@
         <equacao>( 0,25 * 10,46 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -87,45 ) + ( 0,25 * 185,79 ) + ( 1,00 *0,00 ) = 27,20</equacao>
     </configuracoes>
     <equipes>
-        <equipe>
-            <informacoes>
-                <numero>233</numero>
-                <latitude>29773800000</latitude>
-                <longitude>51124780000</longitude>
-                <numOrdens>5</numOrdens>
-                <tempoAcumulado>294</tempoAcumulado>
-            </informacoes>
-            <ordens>
-                <ordemComercial>
+        <equipe numero="233" longitude="51124780000" latitude="29773800000" tempoAcumulado="294">
+            <!--<informacoes>-->
+                <!--<numero>233</numero>-->
+                <!--<latitude>29773800000</latitude>-->
+                <!--<longitude></longitude>-->
+                <!--<numOrdens>5</numOrdens>-->
+                <!--<tempoAcumulado>294</tempoAcumulado>-->
+            <!--</informacoes>-->
+            <ordens quantidade="5">
+                <ordemComercial sequencia="1" tipo="C">
                     <sequencia>1</sequencia>
                     <tipo>C</tipo>
                     <numero>C20568271</numero>

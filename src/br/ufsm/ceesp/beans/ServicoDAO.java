@@ -46,4 +46,14 @@ public class ServicoDAO {
         return criteria.list();
     }
 
+    @Transactional
+    public void criaServico(Servico servico) {
+        sessionFactory.getCurrentSession().save(servico);
+    }
+
+    @Transactional
+    public Servico findServicoById(Long id) {
+        return (Servico) sessionFactory.getCurrentSession().get(Servico.class, id);
+    }
+
 }
