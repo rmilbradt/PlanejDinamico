@@ -1,4 +1,7 @@
 <rota_saida>
+    <ordemEmergencial sequencia="" tipo="" numero="" latitude="" longitude="" horaChegada="" horaPartida="" custo="" tempo="" distanciaEquipe="" distanciaOrdemAnterior=""></ordemEmergencial>
+    <ordemComercial sequencia="" tipo="" numero="" latitude="" longitude="" horaChegada="" horaPartida="" prioridade="" tempoAcumulado=""></ordemComercial>
+
     <configuracoes>
         <hora>12:15</hora>
         <numEquipes>2</numEquipes>
@@ -6,73 +9,16 @@
         <equacao>( 0,25 * 10,46 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -87,45 ) + ( 0,25 * 185,79 ) + ( 1,00 *0,00 ) = 27,20</equacao>
     </configuracoes>
     <equipes>
-        <equipe numero="233" longitude="51124780000" latitude="29773800000" tempoAcumulado="294">
-            <!--<informacoes>-->
-                <!--<numero>233</numero>-->
-                <!--<latitude>29773800000</latitude>-->
-                <!--<longitude></longitude>-->
-                <!--<numOrdens>5</numOrdens>-->
-                <!--<tempoAcumulado>294</tempoAcumulado>-->
-            <!--</informacoes>-->
+        <equipe numero="233" latitude="29773800000" longitude="51124780000" tempoAcumulado="294">
             <ordens quantidade="5">
-                <ordemComercial sequencia="1" tipo="C">
-                    <!--<sequencia>1</sequencia>-->
-                    <!--<tipo>C</tipo>-->
-                    <numero>C20568271</numero>
-                    <latitude>29892960000</latitude>
-                    <longitude>51128680000</longitude>
-                    <horaChegada>12:32</horaChegada>
-                    <horaPartida>13:27</horaPartida>
-                    <prioridade>1</prioridade>
-                    <tempoAcumulado>17</tempoAcumulado>
-                </ordemComercial>
-                <ordemComercial>
-                    <sequencia>2</sequencia>
-                    <tipo>C</tipo>
-                    <numero>C20569605</numero>
-                    <latitude>29885223690</latitude>
-                    <longitude>51132156720</longitude>
-                    <horaChegada>13:29</horaChegada>
-                    <horaPartida>14:24</horaPartida>
-                    <prioridade>1</prioridade>
-                    <tempoAcumulado>74</tempoAcumulado>
-                </ordemComercial>
-                <ordemComercial>
-                    <sequencia>3</sequencia>
-                    <tipo>C</tipo>
-                    <numero>C20564756</numero>
-                    <latitude>29884405300</latitude>
-                    <longitude>51134684100</longitude>
-                    <horaChegada>14:24</horaChegada>
-                    <horaPartida>15:19</horaPartida>
-                    <prioridade>1</prioridade>
-                    <tempoAcumulado>129</tempoAcumulado>
-                </ordemComercial>
-                <ordemComercial>
-                    <sequencia>4</sequencia>
-                    <tipo>C</tipo>
-                    <numero>C20568654</numero>
-                    <latitude>29884210000</latitude>
-                    <longitude>51134710000</longitude>
-                    <horaChegada>15:19</horaChegada>
-                    <horaPartida>16:14</horaPartida>
-                    <prioridade>1</prioridade>
-                    <tempoAcumulado>184</tempoAcumulado>
-                </ordemComercial>
-                <ordemComercial>
-                    <sequencia>5</sequencia>
-                    <tipo>C</tipo>
-                    <numero>C20566874</numero>
-                    <latitude>29885141460</latitude>
-                    <longitude>51136051350</longitude>
-                    <horaChegada>16:14</horaChegada>
-                    <horaPartida>17:09</horaPartida>
-                    <prioridade>1</prioridade>
-                    <tempoAcumulado>239</tempoAcumulado>
-                </ordemComercial>
-            </ordens>
+                <ordemComercial sequencia="1" tipo="C" numero="C20568271" latitude="29892960000" longitude="51128680000" horaChegada="12:32" horaPartida="13:27" prioridade="1" tempoAcumulado="17"></ordemComercial>
+                <ordemComercial sequencia="2" tipo="C" numero="C20569605" latitude="29885223690" longitude="51132156720" horaChegada="13:29" horaPartida="14:24" prioridade="1" tempoAcumulado="74"></ordemComercial>
+                <ordemComercial sequencia="3" tipo="C" numero="C20564756" latitude="29884405300" longitude="51134684100" horaChegada="14:24" horaPartida="15:19" prioridade="1" tempoAcumulado="129"></ordemComercial>
+                <ordemComercial sequencia="4" tipo="C" numero="C20568654" latitude="29884210000" longitude="51134710000" horaChegada="15:19" horaPartida="16:14" prioridade="1" tempoAcumulado="184"></ordemComercial>
+                <ordemComercial sequencia="5" tipo="C" numero="C20566874" latitude="29885141460" longitude="51136051350" horaChegada="16:14" horaPartida="17:09" prioridade="1" tempoAcumulado="239"></ordemComercial>
+               </ordens>
         </equipe>
-        <equipe>
+        <equipe numero="244" latitude="29912880000" longitude="51143490000" tempoAcumulado="333">
             <informacoes>
                 <numero>244</numero>
                 <latitude>29912880000</latitude>
@@ -80,98 +26,22 @@
                 <numOrdens>7</numOrdens>
                 <tempoAcumulado>333</tempoAcumulado>
             </informacoes>
-            <ordens>
-                <ordemEmergencial>
-                    <sequencia>1</sequencia>
-                    <tipo>E</tipo>
-                    <numero>F9870114</numero>
-                    <latitude>29954305234</latitude>
-                    <longitude>51161028911</longitude>
-                    <horaChegada>13:06</horaChegada>
-                    <horaPartida>13:36</horaPartida>
-                    <custo>1</custo>
-                    <tempo>52</tempo>
-                    <distanciaEquipe>51,75</distanciaEquipe>
-                    <distanciaOrdemAnterior>0,00</distanciaOrdemAnterior>
-                </ordemEmergencial>
-                <ordemComercial>
-                    <sequencia>2</sequencia>
-                    <tipo>C</tipo>
-                    <numero>C20571363</numero>
-                    <latitude>29956190000</latitude>
-                    <longitude>51182390000</longitude>
-                    <horaChegada>13:39</horaChegada>
-                    <horaPartida>14:34</horaPartida>
-                    <prioridade>1</prioridade>
-                    <tempoAcumulado>84</tempoAcumulado>
-                </ordemComercial>
-                <ordemComercial>
-                    <sequencia>3</sequencia>
-                    <tipo>C</tipo>
-                    <numero>C20570845</numero>
-                    <latitude>29960490000</latitude>
-                    <longitude>51181620000</longitude>
-                    <horaChegada>14:35</horaChegada>
-                    <horaPartida>15:30</horaPartida>
-                    <prioridade>1</prioridade>
-                    <tempoAcumulado>140</tempoAcumulado>
-                </ordemComercial>
-                <ordemComercial>
-                    <sequencia>4</sequencia>
-                    <tipo>C</tipo>
-                    <numero>C20570094</numero>
-                    <latitude>29963600000</latitude>
-                    <longitude>51184270000</longitude>
-                    <horaChegada>15:31</horaChegada>
-                    <horaPartida>16:01</horaPartida>
-                    <prioridade>2</prioridade>
-                    <tempoAcumulado>196</tempoAcumulado>
-                </ordemComercial>
-                <ordemComercial>
-                    <sequencia>5</sequencia>
-                    <tipo>C</tipo>
-                    <numero>C20569204</numero>
-                    <latitude>29965750000</latitude>
-                    <longitude>51186190000</longitude>
-                    <horaChegada>16:01</horaChegada>
-                    <horaPartida>16:31</horaPartida>
-                    <prioridade>2</prioridade>
-                    <tempoAcumulado>226</tempoAcumulado>
-                </ordemComercial>
-                <ordemEmergencial>
-                    <sequencia>6</sequencia>
-                    <tipo>E</tipo>
-                    <numero>F9870685</numero>
-                    <latitude>29881582756</latitude>
-                    <longitude>51256003245</longitude>
-                    <horaChegada>16:48</horaChegada>
-                    <horaPartida>17:18</horaPartida>
-                    <custo>1</custo>
-                    <tempo>273</tempo>
-                    <distanciaEquipe>62,52</distanciaEquipe>
-                    <distanciaOrdemAnterior>16,40</distanciaOrdemAnterior>
-                </ordemEmergencial>
-                <ordemEmergencial>
-                    <sequencia>7</sequencia>
-                    <tipo>E</tipo>
-                    <numero>F9870758</numero>
-                    <latitude>29881582766</latitude>
-                    <longitude>51256003265</longitude>
-                    <horaChegada>17:18</horaChegada>
-                    <horaPartida>17:48</horaPartida>
-                    <custo>1</custo>
-                    <tempo>303</tempo>
-                    <distanciaEquipe>62,52</distanciaEquipe>
-                    <distanciaOrdemAnterior>0,00</distanciaOrdemAnterior>
-                </ordemEmergencial>
+            <ordens quantidade="7">
+                <ordemEmergencial sequencia="1" tipo="E" numero="F9870114" latitude="29954305234" longitude="51161028911" horaChegada="13:06" horaPartida="13:36" custo="1" tempo="52" distanciaEquipe="51,75" distanciaOrdemAnterior="0,00"></ordemEmergencial>
+                <ordemComercial sequencia="2" tipo="C" numero="C20571363" latitude="29956190000" longitude="51182390000" horaChegada="13:39" horaPartida="14:34" prioridade="1" tempoAcumulado="84"></ordemComercial>
+                <ordemComercial sequencia="3" tipo="C" numero="C20570845" latitude="29960490000" longitude="51181620000" horaChegada="14:35" horaPartida="15:30" prioridade="1" tempoAcumulado="140"></ordemComercial>
+                <ordemComercial sequencia="4" tipo="C" numero="C20570094" latitude="29963600000" longitude="51184270000" horaChegada="15:31" horaPartida="16:01" prioridade="2" tempoAcumulado="196"></ordemComercial>
+                <ordemComercial sequencia="5" tipo="C" numero="C20569204" latitude="29965750000" longitude="51186190000" horaChegada="16:01" horaPartida="16:31" prioridade="2" tempoAcumulado="226"></ordemComercial>
+                <ordemEmergencial sequencia="6" tipo="E" numero="F9870685" latitude="29881582756" longitude="51256003245" horaChegada="16:48" horaPartida="17:18" custo="1" tempo="273" distanciaEquipe="62,52" distanciaOrdemAnterior="16,40"></ordemEmergencial>
+                <ordemEmergencial sequencia="7" tipo="E" numero="F9870758" latitude="29881582766" longitude="51256003265" horaChegada="17:18" horaPartida="17:48" custo="1" tempo="303" distanciaEquipe="62,52" distanciaOrdemAnterior="0,00"></ordemEmergencial>
             </ordens>
         </equipe>
-        <ordemEmergencialNao-atribuida>
+        <!--<ordemEmergencialNao-atribuida>
             <tipo></tipo>
             <numero></numero>
             <latitude></latitude>
             <longitude></longitude>
             <custo></custo>
-        </ordemEmergencialNao-atribuida>
+        </ordemEmergencialNao-atribuida>-->
     </equipes>
 </rota_saida>
