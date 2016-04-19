@@ -16,8 +16,8 @@
             <!--</informacoes>-->
             <ordens quantidade="5">
                 <ordemComercial sequencia="1" tipo="C">
-                    <sequencia>1</sequencia>
-                    <tipo>C</tipo>
+                    <!--<sequencia>1</sequencia>-->
+                    <!--<tipo>C</tipo>-->
                     <numero>C20568271</numero>
                     <latitude>29892960000</latitude>
                     <longitude>51128680000</longitude>
