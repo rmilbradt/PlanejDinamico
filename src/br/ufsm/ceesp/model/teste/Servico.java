@@ -1,4 +1,6 @@
-package br.ufsm.ceesp.model;
+package br.ufsm.ceesp.model.teste;
+
+import br.ufsm.ceesp.model.Localizacao;
 
 import javax.persistence.*;
 import java.util.Date;
