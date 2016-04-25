@@ -1,6 +1,6 @@
 package br.ufsm.ceesp.beans;
 
-import br.ufsm.ceesp.model.Servico;
+import br.ufsm.ceesp.model.teste.Servico;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;

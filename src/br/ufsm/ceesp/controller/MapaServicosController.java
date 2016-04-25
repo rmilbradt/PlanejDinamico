@@ -1,7 +1,7 @@
 package br.ufsm.ceesp.controller;
 
 import br.ufsm.ceesp.beans.ServicoDAO;
-import br.ufsm.ceesp.model.Servico;
+import br.ufsm.ceesp.model.teste.Servico;
 import br.ufsm.ceesp.util.CargaArquivos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;

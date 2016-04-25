@@ -1,7 +1,11 @@
 package br.ufsm.ceesp.util;
 
+import br.ufsm.ceesp.beans.EquipeDAO;
+import br.ufsm.ceesp.model.ArquivoSaida;
+import br.ufsm.ceesp.model.Equipe;
 import br.ufsm.ceesp.model.Localizacao;
-import br.ufsm.ceesp.model.Servico;
+import br.ufsm.ceesp.model.Rota;
+import br.ufsm.ceesp.model.teste.Servico;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,6 +29,47 @@ public class CargaArquivos {
 
     @Autowired
     private SessionFactory sessionFactory;
+
+    @Autowired
+    private EquipeDAO equipeDAO;
+
+    @Transactional
+    public ArquivoSaida carregaArquivoSaida(InputStream in) throws IOException, ParseException {
+        ArquivoSaida arq = new ArquivoSaida();
+        arq.setRotas(new ArrayList<>());
+        LeitorCSV leitorCSV = new LeitorCSV(in, '\t');
+        SimpleDateFormat SDF_data = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat SDF_dataHora = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+
+        String[] linhaArquivo = leitorCSV.nextLine();
+        String dataHora = SDF_data.format(new Date()) + " " + linhaArquivo[0];
+        arq.setData(SDF_dataHora.parse(dataHora));
+        arq.setNumEquipes(Integer.parseInt(linhaArquivo[1]));
+        arq.setNumOrdensEmergenciaisNaoAtribuidas(Integer.parseInt(linhaArquivo[2]));
+        linhaArquivo = leitorCSV.nextLine();
+        Rota rota = null;
+        while(linhaArquivo != null) {
+            if (linhaArquivo.length == 5) {
+                if (rota != null) {
+                    arq.getRotas().add(rota);
+                }
+                rota = new Rota();
+                Equipe equipe = equipeDAO.findByCodigo(Long.parseLong(linhaArquivo[0]));
+                if (equipe == null) {
+                    equipe = new Equipe();
+                    equipe.setNumero(Long.parseLong(linhaArquivo[0]));
+                    sessionFactory.getCurrentSession().save(equipe);
+                }
+                rota.setEquipe(equipe);
+
+            } else {
+
+            }
+            linhaArquivo = leitorCSV.nextLine();
+        }
+
+        return null;
+    }
 
     @Transactional
     public Collection<Servico> carregaArquivoChamadosComercial(InputStream in) {
