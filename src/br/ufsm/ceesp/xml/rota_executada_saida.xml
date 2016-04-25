@@ -1,13 +1,5 @@
 <rota_saida>
-    <ordemEmergencial sequencia="" tipo="" numero="" latitude="" longitude="" horaChegada="" horaPartida="" custo="" tempo="" distanciaEquipe="" distanciaOrdemAnterior=""></ordemEmergencial>
-    <ordemComercial sequencia="" tipo="" numero="" latitude="" longitude="" horaChegada="" horaPartida="" prioridade="" tempoAcumulado=""></ordemComercial>
-
-    <configuracoes>
-        <hora>12:15</hora>
-        <numEquipes>2</numEquipes>
-        <numOrdensEmergenciais>0</numOrdensEmergenciais>
-        <equacao>( 0,25 * 10,46 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -87,45 ) + ( 0,25 * 185,79 ) + ( 1,00 *0,00 ) = 27,20</equacao>
-    </configuracoes>
+    <configuracoes hora="12:15" numEquipes="2" numOrdensEmergenciais="0" equacao="( 0,25 * 10,46 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -87,45 ) + ( 0,25 * 185,79 ) + ( 1,00 *0,00 ) = 27,20"></configuracoes>
     <equipes>
         <equipe numero="233" latitude="29773800000" longitude="51124780000" tempoAcumulado="294">
             <ordens quantidade="5">
@@ -16,16 +8,10 @@
                 <ordemComercial sequencia="3" tipo="C" numero="C20564756" latitude="29884405300" longitude="51134684100" horaChegada="14:24" horaPartida="15:19" prioridade="1" tempoAcumulado="129"></ordemComercial>
                 <ordemComercial sequencia="4" tipo="C" numero="C20568654" latitude="29884210000" longitude="51134710000" horaChegada="15:19" horaPartida="16:14" prioridade="1" tempoAcumulado="184"></ordemComercial>
                 <ordemComercial sequencia="5" tipo="C" numero="C20566874" latitude="29885141460" longitude="51136051350" horaChegada="16:14" horaPartida="17:09" prioridade="1" tempoAcumulado="239"></ordemComercial>
-               </ordens>
+            </ordens>
         </equipe>
         <equipe numero="244" latitude="29912880000" longitude="51143490000" tempoAcumulado="333">
-            <informacoes>
-                <numero>244</numero>
-                <latitude>29912880000</latitude>
-                <longitude>51143490000</longitude>
-                <numOrdens>7</numOrdens>
-                <tempoAcumulado>333</tempoAcumulado>
-            </informacoes>
+            <informacoes numero="244" latitude="29912880000" longitude="51143490000" tempoAcumulado="333"></informacoes>
             <ordens quantidade="7">
                 <ordemEmergencial sequencia="1" tipo="E" numero="F9870114" latitude="29954305234" longitude="51161028911" horaChegada="13:06" horaPartida="13:36" custo="1" tempo="52" distanciaEquipe="51,75" distanciaOrdemAnterior="0,00"></ordemEmergencial>
                 <ordemComercial sequencia="2" tipo="C" numero="C20571363" latitude="29956190000" longitude="51182390000" horaChegada="13:39" horaPartida="14:34" prioridade="1" tempoAcumulado="84"></ordemComercial>
