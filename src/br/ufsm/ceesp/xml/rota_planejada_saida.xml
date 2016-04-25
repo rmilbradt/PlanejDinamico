@@ -1,3 +1,47 @@
+<!DOCTYPE rota_saida [
+        <!ELEMENT rota_saida (configuracoes|equipes)*>
+        <!ELEMENT configuracoes (#PCDATA)>
+        <!ATTLIST configuracoes
+                hora CDATA #REQUIRED
+                numEquipes CDATA #REQUIRED
+                numOrdensEmergenciais CDATA #REQUIRED
+                equacao CDATA #REQUIRED>
+        <!ELEMENT equipes (equipe)*>
+        <!ELEMENT equipe (informacoes|ordens)*>
+        <!ELEMENT informacoes (#PCDATA)>
+        <!ATTLIST informacoes
+                latitude CDATA #REQUIRED
+                longitude CDATA #REQUIRED
+                numero CDATA #REQUIRED
+                tempoAcumulado CDATA #REQUIRED>
+        <!ELEMENT ordens (ordemEmergencial|ordemComercial)*>
+        <!ATTLIST ordens
+                quantidade CDATA #REQUIRED>
+        <!ELEMENT ordemEmergencial (#PCDATA)>
+        <!ATTLIST ordemEmergencial
+                custo CDATA #REQUIRED
+                distanciaEquipe CDATA #REQUIRED
+                distanciaOrdemAnterior CDATA #REQUIRED
+                horaChegada CDATA #REQUIRED
+                horaPartida CDATA #REQUIRED
+                latitude CDATA #REQUIRED
+                longitude CDATA #REQUIRED
+                numero CDATA #REQUIRED
+                sequencia CDATA #REQUIRED
+                tempo CDATA #REQUIRED
+                tipo CDATA #REQUIRED>
+        <!ELEMENT ordemComercial (#PCDATA)>
+        <!ATTLIST ordemComercial
+                horaChegada CDATA #REQUIRED
+                horaPartida CDATA #REQUIRED
+                latitude CDATA #REQUIRED
+                longitude CDATA #REQUIRED
+                numero CDATA #REQUIRED
+                prioridade CDATA #REQUIRED
+                sequencia CDATA #REQUIRED
+                tempoAcumulado CDATA #REQUIRED
+                tipo CDATA #REQUIRED>
+        ]>
 <rota_saida>
     <configuracoes hora="12:15" numEquipes="2" numOrdensEmergenciais="0" equacao="( 0,25 * 3,48 ) + ( 1,00 * 0,00 ) + ( 0,25 * 0,00 ) + ( 0,25 * -66,72 ) + ( 0,25 * 244,22 ) + ( 1,00 * 0,00 ) = 45,2"></configuracoes>
     <equipes>
